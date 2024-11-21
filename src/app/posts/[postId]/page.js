@@ -3,7 +3,6 @@ import { posts } from "@/static";
 import Link from "next/link";
 export default async function PostPage({ params }) {
   const { postId } = await params;
-  console.log(postId);
   const post = posts.find(post => String(post.id) === postId);
 
   if (!post) return <div>Post does not exist</div>;

@@ -1,6 +1,7 @@
 import React from "react";
 import { posts } from "@/static";
 export default async function CommentPage({ params }) {
+  // SERVER
   const { postId, commentId } = await params;
 
   const comment = posts
@@ -8,6 +9,7 @@ export default async function CommentPage({ params }) {
     ?.comments.find(comment => String(comment.id) === commentId);
 
   if (!comment) return <div>Comment does not exist</div>;
+  //NAVIGATOR ("res.render")
   return (
     <div>
       <h1>
